@@ -2,10 +2,37 @@
     --red: hsl(0, 100%, 74%);
     --green: hsl(154, 59%, 51%);
     --blue: hsl(248, 32%, 49%);
-    --dark-blue: hsl(249, 10%, 26%) ;
+    --dark-blue: hsl(249, 10%, 26%);
     --greyish-blue: hsl(246, 25%, 77%);
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
 }
 
 body {
+    min-height: 100vw;
+    background-color: var(--red);
     font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body .flex-container {
+    display: flex;
+    width: 80%;
+    justify-content: center;
+}
+
+.text-container {
+    width: 40%;
+    color: var(--white);
+}
+
+.form-container {
+    width: 40%;
 }

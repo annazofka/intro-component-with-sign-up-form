@@ -10,7 +10,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: content-box;
+    box-sizing: border-box;  /* so the width of all the elements contains padding */
 }
 
 body {
@@ -20,19 +20,89 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 body .flex-container {
-    display: flex;
     width: 80%;
+    display: flex;
     justify-content: center;
+    align-items: center;
+
 }
 
 .text-container {
     width: 40%;
     color: var(--white);
+    /* margin: 2%; */
+}
+
+.h1--text-container {
+    font-weight: 800;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.p--text-container {
+    font-weight: 400;
+    font-size: 0.8rem;
+    line-height: 1.5rem;
 }
 
 .form-container {
     width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form {
+    width: 100%;
+    background-color: var(--white);
+    font-style: normal;
+    font-weight: 400;
+    padding: 5%;
+}
+
+.button--try {
+    width: 100%;
+    background-color: var(--blue);
+    color: var(--white);
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    padding: 12px;
+    margin-bottom: 20px;
+}
+
+.span--try {
+    font-weight: bolder;
+}
+
+.input--text {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.submit--freetrial {
+    text-transform: uppercase;
+    width: 100%;
+    background-color: var(--green);
+    color: var(--white);
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.p--ts {
+    font-weight: 400;
+    font-size: 0.6rem;
+    text-align: center;
+}
+
+.span--ts {
+    color: var(--red);
 }

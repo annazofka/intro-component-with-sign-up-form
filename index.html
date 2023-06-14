@@ -15,17 +15,25 @@
 <body>
     <div class="flex-container">
         <article class="text-container">
-            <h1>Learn to code by watching others</h1>
-            <p>See how experienced developers solve problems in real-time. Watching scripted
+            <h1 class="h1 h1--text-container">Learn to code by <br>watching others</h1>
+            <p class="p p--text-container">See how experienced developers solve problems in real-time. Watching scripted
                 tutorials is great, but understanding how developers think is invaluable.</p>
         </article>
         <article class="form-container">
-            <button type="button" class="button button--try">Try it free 7 days then $20/mo. thereafter</button>
-            <form action="">
+            <button type="button" class="button button--try"><span class="span span--try">Try it free 7 days</span> then $20/mo. thereafter</button>
+            <form class="form">
+                <input type="text" placeholder="First Name" class="input input--text" required>
+                <br>
+                <input type="text" placeholder="Last Name" class="input input--text" required>
+                <br>
+                <input type="email" placeholder="Email" class="input input--text" required>
+                <br>
+                <input type="password" placeholder="Password" class="input input--text" required>
+                <br>
+                <input type="submit" value="Claim your free trial" class="submit submit--freetrial">
+                <br>
+                <p class="p p--ts">By clicking the button, you are agreeing to our <span class="span span--ts">Terms and Services</span></p>
             </form>
-            <p>"First Name Last Name Email Address Password"</p>
-            <button>Claim your free trial</button>
-            <p>By clicking the button, you are agreeing to our Terms and Services</p>
         </article>
     </div>
 </body>

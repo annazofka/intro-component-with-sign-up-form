@@ -22,13 +22,13 @@
         <article class="form-container">
             <button type="button" class="button button--try"><span class="span span--try">Try it free 7 days</span> then $20/mo. thereafter</button>
             <form class="form">
-                <input type="text" placeholder="First Name" class="input input--text" required>
+                <input type="text" placeholder="First Name" class="input input--text" required oninvalid="this.setCustomValidity('First Name cannot be empty')" oninput="this.setCustomValidity('')">
                 <br>
-                <input type="text" placeholder="Last Name" class="input input--text" required>
+                <input type="text" placeholder="Last Name" class="input input--text" required oninvalid="this.setCustomValidity('Last Name cannot be empty')" oninput="this.setCustomValidity('')">
                 <br>
-                <input type="email" placeholder="Email" class="input input--text" required>
+                <input type="email" placeholder="Email" class="input input--text" required oninvalid="this.setCustomValidity('Looks like this is not an email')" oninput="this.setCustomValidity('')">
                 <br>
-                <input type="password" placeholder="Password" class="input input--text" required>
+                <input type="password" placeholder="Password" class="input input--text" required oninvalid="this.setCustomValidity('Password cannot be empty')" oninput="this.setCustomValidity('')">
                 <br>
                 <input type="submit" value="Claim your free trial" class="submit submit--freetrial">
                 <br>

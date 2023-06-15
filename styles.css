@@ -67,6 +67,11 @@ body .flex-container {
     padding: 15px;
     margin-bottom: 20px;
     box-shadow: 0 5px rgb(63, 61, 74, 0.2);
+    transition-duration: 0.4s;
+}
+
+.button--try:hover {
+    background-color: var(--dark-blue);
 }
 
 .span--try {
@@ -100,6 +105,11 @@ body .flex-container {
     text-align: center;
     padding: 13px;
     margin: 10px 0;
+    transition-duration: 0.4s;
+}
+
+.submit--freetrial:hover {
+    background-color: var(--dark-blue);
 }
 
 .p--ts {

@@ -1,185 +1,194 @@
 :root {
-    --red: hsl(0, 100%, 74%);
-    --green: hsl(154, 59%, 51%);
-    --blue: hsl(248, 32%, 49%);
-    --dark-blue: hsl(249, 10%, 26%);
-    --greyish-blue: hsl(246, 25%, 77%);
-    --white: hsl(0, 0%, 100%);
-}
+  --red: hsl(0, 100%, 74%);
+  --green: hsl(154, 59%, 51%);
+  --blue: hsl(248, 32%, 49%);
+  --dark-blue: hsl(249, 10%, 26%);
+  --greyish-blue: hsl(246, 25%, 77%);
+  --white: hsl(0, 0%, 100%);
 
+  --small: 1rem;
+  --medium: 1.2rem;
+  --large: 1.5rem;
+}
+/* gwiazdka (asterisk) - selektor który aplikuje style do wsystkich elementów na stronie/w dokumencie */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /* so the width of all the elements contains padding */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /**/
+  /* właściwość która powoduje że w 
+  szerokośći elementu zawarta jest warość lewego/prawego 
+  borderu/paddingu oraz contentu */
 }
 
 body {
-    min-height: 100vw;
-    background-color: var(--red);
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+  min-height: 100vh; /*vw - viewport width    vh - viewport height*/
+  background-color: var(--red);
+  background-image: url("./bg-img.png");
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 body .flex-container {
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .text-container {
-    width: 40%;
-    color: var(--white);
-    margin: 2%;
+  width: 40%;
+  color: var(--white);
+  margin: 2%;
 }
 
 .h1--text-container {
-    font-weight: 800;
-    font-size: 40px;
-    line-height: 3rem;
-    margin-bottom: 23px;
+  font-weight: 800;
+  font-size: 4rem; /* konsekwencja - ważna kwestia jeżeli używamy px używajmy px, jezeli rem to rem  */
+  line-height: 3rem;
+  margin-bottom: 23px;
 }
 
 .p--text-container {
-    font-weight: 400;
-    font-size: 0.8rem;
-    line-height: 1.5rem;
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
 }
 
 .form-container {
-    width: 40%;
-    display: flex;
-    flex-wrap: wrap;
+  width: 40%;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
 }
 
 .button--try {
-    width: 100%;
-    background-color: var(--blue);
-    color: var(--white);
-    border-radius: 5px;
-    border: none;
-    text-align: center;
-    padding: 15px;
-    margin-bottom: 20px;
-    box-shadow: 0 5px rgb(63, 61, 74, 0.2);
-    transition-duration: 0.4s;
+  width: 100%;
+  background-color: var(--blue);
+  color: var(--white);
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px rgb(63, 61, 74, 0.2);
+  transition-duration: 0.4s;
+  cursor: pointer;
 }
 
 .button--try:hover {
-    background-color: var(--dark-blue);
+  background-color: var(--dark-blue);
 }
 
 .span--try {
-    font-weight: bolder;
+  font-weight: bolder;
 }
 
 .form {
-    width: 100%;
-    background-color: var(--white);
-    font-style: normal;
-    font-weight: 400;
-    padding: 5%;
-    border-radius: 5px;
-    box-shadow: 0 5px rgb(63, 61, 74, 0.2);
+  /* width: 100%; */
+  background-color: var(--white);
+  font-style: normal;
+  font-weight: 400;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 5px rgb(63, 61, 74, 0.2);
 }
 
 .input--text {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
 }
 
 .submit--freetrial {
-    text-transform: uppercase;
-    font-weight: bolder;
-    width: 100%;
-    background-color: var(--green);
-    color: var(--white);
-    border-radius: inherit;
-    border: none;
-    text-align: center;
-    padding: 13px;
-    margin: 10px 0;
-    transition-duration: 0.4s;
+  text-transform: uppercase;
+  font-weight: bolder;
+  width: 100%;
+  background-color: var(--green);
+  color: var(--white);
+  border-radius: inherit;
+  border: none;
+  text-align: center;
+  padding: 13px;
+  margin: 10px 0;
+  transition-duration: 0.4s;
+  cursor: pointer;
 }
 
 .submit--freetrial:hover {
-    background-color: var(--dark-blue);
+  background-color: var(--dark-blue);
 }
 
 .p--ts {
-    font-weight: 400;
-    font-size: 0.6rem;
-    text-align: center;
-    color: var(--greyish-blue);
-    margin-top: 5px;
+  font-weight: 400;
+  font-size: 0.6rem;
+  text-align: center;
+  color: var(--greyish-blue);
+  margin-top: 5px;
 }
 
 .span--ts {
-    color: var(--red);
-    font-weight: bold;
-}
-
-/* mobile */
-@media screen and (max-width:375px) {
-
-    body .flex-container {
-        flex-direction: column;
-    }
-
-    .text-container {
-        width: 80%;
-        margin: 32px 0 0 0;
-    }
-
-    .h1--text-container {
-        font-weight: 700;
-        font-size: 27px;
-        line-height: 2rem;
-        text-align: center;
-    }
-    
-    .p--text-container {
-        text-align: center;
-        margin-bottom: 32px;
-    }
-
-    .form-container {
-        width: 80%;
-        margin-bottom: 32px;
-    }
-    
+  color: var(--red);
+  font-weight: bold;
 }
 
 /* tablet */
-@media screen and (max-width:860px) {
+@media screen and (max-width: 860px) {
+  body .flex-container {
+    flex-direction: column;
+    width: 100%;
+  }
 
-    body .flex-container {
-        flex-direction: column;
-    }
+  .text-container {
+    /* width: 80%; */
+    width: 90%;
+    margin: 32px 0 0 0;
+  }
 
-    .text-container {
-        width: 80%;
-        margin: 32px 0 0 0;
-    }
+  .h1--text-container {
+    text-align: center;
+  }
 
-    .h1--text-container {
-        text-align: center;
-    }
-    
-    .p--text-container {
-        text-align: center;
-        margin-bottom: 32px;
-    }
+  .p--text-container {
+    text-align: center;
+    margin-bottom: 32px;
+  }
 
-    .form-container {
-        width: 80%;
-        margin-bottom: 32px;
-    }
-    
+  .form-container {
+    /* width: 80%; */
+    width: 90%;
+    margin-bottom: 32px;
+  }
+}
+
+/* mobile */
+@media screen and (max-width: 375px) {
+  /* body .flex-container {
+    width: 100%;
+    flex-direction: column;
+  } */
+
+  /* .text-container {
+    width: 80%;
+    width: 90%;
+    margin: 32px 0 0 0;
+  } */
+
+  .h1--text-container {
+    font-weight: 700;
+    font-size: 2.7rem;
+    line-height: 2rem;
+    text-align: center;
+  }
+
+  .p--text-container {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .form-container {
+    /* width: 80%; */
+    width: 90%;
+    margin-bottom: 32px;
+  }
 }

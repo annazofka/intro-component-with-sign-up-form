@@ -45,7 +45,7 @@ body .flex-container {
 
 .h1--text-container {
   font-weight: 800;
-  font-size: 4rem; /* konsekwencja - ważna kwestia jeżeli używamy px używajmy px, jezeli rem to rem  */
+  font-size: 3rem; /* konsekwencja - ważna kwestia jeżeli używamy px używajmy px, jezeli rem to rem  */
   line-height: 3rem;
   margin-bottom: 23px;
 }

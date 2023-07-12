@@ -1,54 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Intro component with signup form</title>
+    <link rel="icon" type="image/x-icon" href="favicon-32x32.png" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap" rel="stylesheet" />
-  <title>Intro component with signup form</title>
-  <link rel="icon" type="image/x-icon" href="favicon-32x32.png">
-</head>
-
-<body>
-  <div class="flex-container">
-    <article class="text-container">
-      <!-- BEM block(text-container) element(h1) modifier(--green) -->
-      <h1 class="h1 h1--text-container text-container__h1 text-container__h1--green">
-        Learn to code by <br />
-        watching others
-      </h1>
-      <p class="p p--text-container">
-        See how experienced developers solve problems in real-time. Watching
-        scripted tutorials is great, but understanding how developers think is
-        invaluable.
-      </p>
-    </article>
-    <article class="form-container">
-      <button type="button" class="button button--try">
-        <!-- <span class="button-label--green button-label--bold button-label--green">Try it free 7 days</span> then $20/mo. -->
-        <span class="span span--try">Try it free 7 days</span> then $20/mo.
-        thereafter
-      </button>
-      <form class="form" id="form" name="form">
-        <input type="text" placeholder="First Name" name="firstname" class="input input--text" />
-        <div class="feedback-firstname"></div>
-        <input type="text" placeholder="Last Name" name="lastname" class="input input--text" />
-        <input type="email" placeholder="Email" id="email" name="email" class="input input--text" />
-        <span class="error" aria-live="polite"></span>
-        <input type="password" placeholder="Password" name="password" class="input input--text" />
-        <input type="submit" value="Claim your free trial" class="submit submit--freetrial" />
-        <p class="p p--ts">
-          By clicking the button, you are agreeing to our
-          <span class="span span--ts">Terms and Services</span>
+  <body>
+    <div class="flex-container">
+      <article class="text-container">
+        <!-- BEM block(text-container) element(h1) modifier(--green) -->
+        <h1
+          class="h1 h1--text-container text-container__h1 text-container__h1--green"
+        >
+          Learn to code by <br />
+          watching others
+        </h1>
+        <p class="p p--text-container">
+          See how experienced developers solve problems in real-time. Watching
+          scripted tutorials is great, but understanding how developers think is
+          invaluable.
         </p>
-      </form>
-    </article>
-  </div>
-  <script src="form.js"></script>
-</body>
-
+      </article>
+      <article class="form-container">
+        <button type="button" class="button button--try">
+          <!-- <span class="button-label--green button-label--bold button-label--green">Try it free 7 days</span> then $20/mo. -->
+          <span class="span span--try">Try it free 7 days</span> then $20/mo.
+          thereafter
+        </button>
+        <form class="form" id="form" name="form">
+          <input
+            type="text"
+            placeholder="First Name"
+            name="firstname"
+            class="input input--text"
+          />
+          <div class="feedback-firstname"></div>
+          <input
+            type="text"
+            placeholder="Last Name"
+            name="lastname"
+            class="input input--text"
+          />
+          <input
+            type="text"
+            placeholder="Email"
+            id="email"
+            name="email"
+            class="input input--text"
+          />
+          <span id="errorOutput" class="error" aria-live="polite"></span>
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            class="input input--text"
+          />
+          <input
+            type="submit"
+            value="Claim your free trial"
+            class="submit submit--freetrial"
+          />
+          <button
+            style="width: 200px; padding: 20px; font-size: 2rem"
+            type="submit"
+            class="p p--ts"
+          >
+            Submit
+          </button>
+          <!-- <p class="p p--ts">
+            By clicking the button, you are agreeing to our
+            <span class="span span--ts">Terms and Services</span>
+          </p> -->
+        </form>
+      </article>
+    </div>
+    <script src="form.js"></script>
+  </body>
 </html>

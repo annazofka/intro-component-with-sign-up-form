@@ -1,48 +1,54 @@
-const form = document.querySelector('form');
-const email = document.querySelector('email');
-const error = email.nextElementSibling;
+const form = document.querySelector("#form");
 
-const emailPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+const emailInput = document.querySelector("#email");
+// const error = email.nextElementSibling;
+const errorOutput = document.querySelector("#errorOutput");
+
+const emailPattern =
+  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 // is the field empty? If not, is it well formatted?
-window.addEventListener("load", () => {
-  const isValid = email.value.length === 0 || emailPattern.test(email.value);
-  email.className = isValid ? "valid" : "invalid";
-});
+// kod nie potrzebny - nie chcemy robić validacji przy pierwszym załadowaniu strony
+// window.addEventListener("load", () => {
+//   const isValid = emailPattern.test(emailInput.value);
+//   emailInput.className = isValid ? "valid" : "invalid";
+// });
 
 // when user types something in
 
-email.addEventListener("input", () => {
-  const isValid = email.value.length === 0 || emailPattern.test(email.value);
+emailInput.addEventListener("input", () => {
+  const isValid = emailPattern.test(emailInput.value);
   if (isValid) {
-    email.className = "valid";
-    error.textContent = "";
-    error.className = "error";
+    emailInput.className = "valid";
+    errorOutput.textContent = "";
+    errorOutput.className = "";
   } else {
-    email.className = "invalid";
+    errorOutput.className = "error";
+    emailInput.className = "invalid";
   }
 });
 
 // when the user tries to submit
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
 
-  const isValid = email.value.length === 0 || emailPattern.test(email.value);
-  if(!isValid) {
-    email.className = "invalid";
-    error.textContent = "This is not a valid email address";
-    error.className = "error active";
+  const isValid = emailPattern.test(emailInput.value);
+
+  if (isValid) {
+    emailInput.className = "valid";
+    errorOutput.textContent = "";
+    errorOutput.className = "error";
   } else {
-    email.className = "valid";
-    error.textContent = "";
-    error.className = "error";
-  };
-  
-// const formContents = document.querySelectorAll('.input input--text');
-// const feedbackUserName = document.querySelector('.feedback--firstname');
+    emailInput.className = "invalid";
+    errorOutput.textContent = "This is not a valid email address";
+    errorOutput.className = "error active";
+  }
 
-// validation:
-  // const firstName = form.firstname.value; 
+  // const formContents = document.querySelectorAll('.input input--text');
+  // const feedbackUserName = document.querySelector('.feedback--firstname');
+
+  // validation:
+  // const firstName = form.firstname.value;
   // const firstNamePattern = /^[a-z A-Z]{1,}$/;
   // if(firstNamePattern.test(firstName)){
   //   feedbackUserName.textContent = "ok";
@@ -56,8 +62,6 @@ form.addEventListener("submit", (e) => {
   // const email = form.email.value;
   // const emailPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 
-
   // const password = form.password.value;
   // const passwordPattern = /^.{6,12}$/;
 });
-

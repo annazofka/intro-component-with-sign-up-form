@@ -100,6 +100,20 @@ body .flex-container {
   margin: 10px 0;
 }
 
+input.invalid {
+  background-color: #fdd;
+}
+
+.error {
+  font-size: 0.5rem;
+  color: var(--red);
+  box-sizing: border-box;
+}
+
+.error.active {
+  padding: 10px;
+}
+
 .submit--freetrial {
   text-transform: uppercase;
   font-weight: bolder;

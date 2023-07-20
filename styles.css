@@ -45,7 +45,7 @@ body .flex-container {
 
 .h1--text-container {
   font-weight: 800;
-  font-size: 3rem; /* konsekwencja - ważna kwestia jeżeli używamy px używajmy px, jezeli rem to rem  */
+  font-size: 3rem; 
   line-height: 3rem;
   margin-bottom: 23px;
 }
@@ -107,11 +107,14 @@ input.invalid {
 .error {
   font-size: 0.5rem;
   color: var(--red);
-  box-sizing: border-box;
 }
 
 .error.active {
   padding: 10px;
+}
+
+.hide {
+  display: none;
 }
 
 .submit--freetrial {

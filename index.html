@@ -41,16 +41,24 @@
           <input
             type="text"
             placeholder="First Name"
+            id="firstname"
             name="firstname"
             class="input input--text"
           />
-          <div class="feedback-firstname"></div>
+          <!-- <div class="feedback-firstname"></div> -->
+          <span id="firstNameErrorOutput" class="error hide">
+            First name can't be empty
+          </span>
           <input
             type="text"
             placeholder="Last Name"
+            id="lastname"
             name="lastname"
             class="input input--text"
           />
+          <span id="lastNameErrorOutput" class="error hide">
+            Last name can't be empty
+          </span>
           <input
             type="text"
             placeholder="Email"
@@ -59,14 +67,18 @@
             class="input input--text"
           />
           <span id="errorOutput" class="error hide">
-            This is not a valid email address
+            Looks like this is not an email
           </span>
           <input
             type="password"
             placeholder="Password"
+            id="password"
             name="password"
             class="input input--text"
           />
+          <span id="passwordErrorOutput" class="error hide">
+            Your password must be 6-12 characters long
+          </span>
           <button
             type="submit"
             value="Claim your free trial"

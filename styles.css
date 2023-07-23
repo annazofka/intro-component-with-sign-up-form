@@ -100,9 +100,9 @@ body .flex-container {
   margin: 10px 0;
 }
 
-input.invalid {
+/* input.invalid {
   background-color: #fdd;
-}
+} */
 
 .error {
   font-size: 0.5rem;

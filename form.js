@@ -1,63 +1,90 @@
-const form = document.querySelector('form');
-const email = document.querySelector('email');
-const error = email.nextElementSibling;
+const form = document.querySelector("#form");
 
-const emailPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+const firstNameInput = document.querySelector("#firstname");
+const firstNameErrorOutput = document.querySelector("#firstNameErrorOutput");
 
-// is the field empty? If not, is it well formatted?
-window.addEventListener("load", () => {
-  const isValid = email.value.length === 0 || emailPattern.test(email.value);
-  email.className = isValid ? "valid" : "invalid";
-});
+const lastNameInput = document.querySelector("#lastname");
+const lastNameErrorOutput = document.querySelector("#lastNameErrorOutput");
 
-// when user types something in
+const emailInput = document.querySelector("#email");
+const errorOutput = document.querySelector("#errorOutput");
 
-email.addEventListener("input", () => {
-  const isValid = email.value.length === 0 || emailPattern.test(email.value);
+const passwordInput = document.querySelector("#password");
+const passwordErrorOutput = document.querySelector("#passwordErrorOutput");
+
+const firstNamePattern = /^[a-z A-Z]{1,}$/;
+const lastNamePattern = /^[a-z A-Z]{1,}$/;
+const emailPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+const passwordPattern = /^.{6,12}$/;
+
+
+const validateFirstName = () => {
+  const isValid = firstNamePattern.test(firstNameInput.value);
   if (isValid) {
-    email.className = "valid";
-    error.textContent = "";
-    error.className = "error";
+    firstNameInput.classList.replace("invalid", "valid");
+    firstNameErrorOutput.classList.add("hide");
   } else {
-    email.className = "invalid";
+    firstNameInput.classList.replace("valid", "invalid");
+    firstNameErrorOutput.classList.remove("hide");
   }
-});
+};
 
-// when the user tries to submit
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+firstNameInput.addEventListener("input", validateFirstName);
 
-  const isValid = email.value.length === 0 || emailPattern.test(email.value);
-  if(!isValid) {
-    email.className = "invalid";
-    error.textContent = "This is not a valid email address";
-    error.className = "error active";
+const validateLastName = () => {
+  const isValid = lastNamePattern.test(lastNameInput.value);
+  if (isValid) {
+    lastNameInput.classList.replace("invalid", "valid");
+    lastNameErrorOutput.classList.add("hide");
   } else {
-    email.className = "valid";
-    error.textContent = "";
-    error.className = "error";
-  };
-  
-// const formContents = document.querySelectorAll('.input input--text');
-// const feedbackUserName = document.querySelector('.feedback--firstname');
+    lastNameInput.classList.replace("valid", "invalid");
+    lastNameErrorOutput.classList.remove("hide");
+  }
+};
 
-// validation:
-  // const firstName = form.firstname.value; 
-  // const firstNamePattern = /^[a-z A-Z]{1,}$/;
-  // if(firstNamePattern.test(firstName)){
-  //   feedbackUserName.textContent = "ok";
-  // } else {
-  //   feedbackUserName.textContent = "First name can't be empty";
-  // }
+lastNameInput.addEventListener("input", validateLastName);
 
-  // const lastName = form.lastname.value;
-  // const lastNamePattern = /^[a-z A-Z]{1,}$/;
+const validateEmail = () => {
+  const isValid = emailPattern.test(emailInput.value);
+  if (isValid) {
+    emailInput.classList.replace("invalid", "valid");
+    errorOutput.classList.add("hide");
+  } else {
+    emailInput.classList.replace("valid", "invalid");
+    errorOutput.classList.remove("hide");
+  }
+};
 
-  // const email = form.email.value;
-  // const emailPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+emailInput.addEventListener("input", validateEmail);
 
+const validatePassword = () => {
+  const isValid = passwordPattern.test(passwordInput.value);
+  if (isValid) {
+    passwordInput.classList.replace("invalid", "valid");
+    passwordErrorOutput.classList.add("hide");
+  } else {
+    passwordInput.classList.replace("valid", "invalid");
+    passwordErrorOutput.classList.remove("hide")
+  }
+};
 
-  // const password = form.password.value;
-  // const passwordPattern = /^.{6,12}$/;
+passwordInput.addEventListener("input", validatePassword);
+
+form.addEventListener("submit", (event) => {
+  const firstNameValidationOutcome = validateLastName()
+  const lastNameValidationOutcome = validateLastName()
+  const emailValidationOutcome = validateEmail()
+  const passwordValidationOutcome = validatePassword()
+
+if (firstNameValidationOutcome || lastNameValidationOutcome || emailValidationOutcome || passwordValidationOutcome) {
+    // {add code} to submit the form and:
+    firstNameInput = ""
+    lastNameInput = ""
+    emailInput = ""
+    passwordInput = ''
+    alert("This form has been successfully submitted!");
+} else {
+  event.preventDefault();
+}
 });
 
